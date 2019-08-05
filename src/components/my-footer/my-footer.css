@@ -1,0 +1,30 @@
+.foot-link-wrap {
+  display: flex;
+  justify-content: center;
+}
+.foot-link {
+  position: relative;
+  display: inline-block;
+  color: rgb(87, 107, 149);
+  text-decoration: none;
+  font-size: 14px;
+  margin: 0 8px;
+}
+.foot-link:first-child::before {
+    display: none;
+}
+.foot-link::before {
+  content: " ";
+  position: absolute;
+  border-left: 1px solid rgb(199, 199, 199);
+  width: 1px;
+  top: 5px;
+  bottom: 5px;
+  left: -8px;
+}
+.copyright {
+  margin: 0;
+  color: rgba(0, 0, 0, 0.3);
+  font-size: 12px;
+  text-align: center;
+}

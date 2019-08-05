@@ -25,6 +25,7 @@ export namespace Components {
   }
   interface MyFooter {
     'date': string;
+    'linkArray'?: string;
     'name': string;
   }
 }
@@ -66,6 +67,7 @@ declare namespace LocalJSX {
   }
   interface MyFooter extends JSXBase.HTMLAttributes<HTMLMyFooterElement> {
     'date'?: string;
+    'linkArray'?: string;
     'name'?: string;
   }
 
