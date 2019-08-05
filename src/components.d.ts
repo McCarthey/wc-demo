@@ -15,7 +15,7 @@ export namespace Components {
     */
     'first': string;
     /**
-    * The last name
+    * The last name\
     */
     'last': string;
     /**
@@ -56,7 +56,7 @@ declare namespace LocalJSX {
     */
     'first'?: string;
     /**
-    * The last name
+    * The last name\
     */
     'last'?: string;
     /**
