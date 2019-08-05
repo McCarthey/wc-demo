@@ -28,6 +28,7 @@ export namespace Components {
     'linkArray'?: string;
     'name': string;
   }
+  interface MyLoading {}
 }
 
 declare global {
@@ -44,9 +45,16 @@ declare global {
     prototype: HTMLMyFooterElement;
     new (): HTMLMyFooterElement;
   };
+
+  interface HTMLMyLoadingElement extends Components.MyLoading, HTMLStencilElement {}
+  var HTMLMyLoadingElement: {
+    prototype: HTMLMyLoadingElement;
+    new (): HTMLMyLoadingElement;
+  };
   interface HTMLElementTagNameMap {
     'my-component': HTMLMyComponentElement;
     'my-footer': HTMLMyFooterElement;
+    'my-loading': HTMLMyLoadingElement;
   }
 }
 
@@ -70,10 +78,12 @@ declare namespace LocalJSX {
     'linkArray'?: string;
     'name'?: string;
   }
+  interface MyLoading extends JSXBase.HTMLAttributes<HTMLMyLoadingElement> {}
 
   interface IntrinsicElements {
     'my-component': MyComponent;
     'my-footer': MyFooter;
+    'my-loading': MyLoading;
   }
 }
 
