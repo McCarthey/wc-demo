@@ -15,10 +15,20 @@
 
   <my-component first="Geogre" middle="RR" last="Martin"></my-component>
   <my-loading></my-loading>
-  <my-footer name="HelloCorporation"
-    link-array='[{"name": "底部链接", "url": "https://mccarthey.top"},{"name": "test", "url": "https://mccarthey.top"}]'>
+  <my-footer id="footer" name="HelloCorporation">
   </my-footer>
+  <script>
+    function setProps(props, cmp) {
+      if (!props) return;
+      Object.keys(props).map(key => cmp[key] = props[key])
+    }
 
+    const myFooter = document.querySelector('#footer');
+    setProps({
+      linkArray: [{ name: "底部链接", url: "https://mccarthey.top" }, { name: "test", url: "https://mccarthey.top" }]
+    }, myFooter);
+
+  </script>
 </body>
 
 </html>

@@ -6,7 +6,9 @@
 
 
 import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
-
+import {
+  LinkItem,
+} from './components/my-footer/my-footer';
 
 export namespace Components {
   interface MyComponent {
@@ -24,8 +26,9 @@ export namespace Components {
     'middle': string;
   }
   interface MyFooter {
+    'backgroundColor'?: string;
     'date': string;
-    'linkArray'?: string;
+    'linkArray'?: LinkItem[] | any;
     'name': string;
   }
   interface MyLoading {}
@@ -74,8 +77,9 @@ declare namespace LocalJSX {
     'middle'?: string;
   }
   interface MyFooter extends JSXBase.HTMLAttributes<HTMLMyFooterElement> {
+    'backgroundColor'?: string;
     'date'?: string;
-    'linkArray'?: string;
+    'linkArray'?: LinkItem[] | any;
     'name'?: string;
   }
   interface MyLoading extends JSXBase.HTMLAttributes<HTMLMyLoadingElement> {}

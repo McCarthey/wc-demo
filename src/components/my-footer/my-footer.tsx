@@ -14,14 +14,13 @@ export class MyFooter {
 
   @Prop() date: string;
 
-  @Prop() linkArray?: string;
+  @Prop() linkArray?: LinkItem[] | any;
 
-  @State() links: LinkItem[] | any;
+  @Prop() backgroundColor?: string;
+
+  @State() links: any;
 
   componentWillLoad() {
-    this.linkArray
-      ? (this.links = JSON.parse(this.linkArray))
-      : (this.links = []);
   }
 
   private getCurrentYear(): number {
@@ -30,10 +29,10 @@ export class MyFooter {
 
   render() {
     return (
-      <div>
+      <div style={{ backgroundColor: this.backgroundColor }}>
         <div class="foot-link-wrap">
-          {this.links.length
-            ? this.links.map(link => (
+          {this.linkArray.length
+            ? this.linkArray.map(link => (
                 <a href={link.url} class="foot-link">
                   {link.name}
                 </a>
